@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skill Matches</title>
+</head>
+<body>
+    <h2>Your Skill Matches</h2>
+    <ul>
+        {% for match in matches %}
+            <li>
+                {{ match.user.username }} - Score: {{ match.score }}
+                <ul>
+                    {% for skill in match.compatible_skills %}
+                        <li>Offered Skill: {{ skill.offered_skill }} - Desired Skill: {{ skill.desired_skill }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSwap - Exchange Skills, Build Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-inter bg-gray-50 text-gray-900">
+    <header class="bg-blue-600 text-white">
+        <nav class="container mx-auto flex justify-between items-center p-6">
+            <div class="text-2xl font-bold">SkillSwap</div>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-blue-200">How It Works</a>
+                <a href="#" class="hover:text-blue-200">Community</a>
+                <a href="{% url 'login' %}" class="bg-white text-blue-600 px-4 py-2 rounded-full hover:bg-blue-100">
+                    Login / Signup
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h1 class="text-5xl font-bold mb-6 leading-tight">
+                    Learn, Share, Grow Together
+                </h1>
+                <p class="text-xl text-gray-600 mb-8">
+                    SkillSwap connects you with people who want to learn what you know and teach what you want to learn.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="{% url 'register' %}" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+                        Get Started
+                    </a>
+                    <a href="#how-it-works" class="bg-gray-200 text-blue-600 px-6 py-3 rounded-full hover:bg-gray-300 transition">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="bg-blue-100 w-full h-96 rounded-xl transform rotate-6 opacity-50"></div>
+                <div class="absolute inset-0 bg-cover bg-center rounded-xl" style="background-image: url('/api/placeholder/600/400')"></div>
+            </div>
+        </section>
+
+        <!-- Rest of the landing page content -->
+    </main>
+</body>
+</html>

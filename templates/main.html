@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSwap - Skill Exchange Platform</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- React and Related Libraries -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <!-- Lucide Icons (Optional) -->
+    <script src="https://unpkg.com/lucide-icons@0.321.0/dist/umd/lucide.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div id="root" class="container mx-auto px-4"></div>
+
+    <!-- Django Context for React -->
+    <script>
+        const USER_DATA = {{ user_data_json|safe }};
+        const SKILLS_DATA = {{ skills_data_json|safe }};
+    </script>
+
+    <!-- Main React Application -->
+    <script type="text/babel">
+        function SkillSwapApp() {
+            const [user, setUser] = React.useState(USER_DATA);
+            const [skills, setSkills] = React.useState(SKILLS_DATA);
+
+            return (
+                <div className="min-h-screen flex flex-col">
+                    <nav className="bg-white shadow-md">
+                        {/* Navigation Components */}
+                    </nav>
+                    <main className="flex-grow">
+                        {/* Main Content */}
+                    </main>
+                    <footer className="bg-white shadow-md">
+                        {/* Footer Content */}
+                    </footer>
+                </div>
+            );
+        }
+
+        ReactDOM.render(
+            <SkillSwapApp />,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>
